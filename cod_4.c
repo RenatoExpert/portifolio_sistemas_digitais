@@ -4,7 +4,9 @@
  * Este programa permite controlar o brilho do LED por meio de comandos enviados pela comunicacao serial
  */
 
-#define PINO_LED 10;	// Pino de saida PWM onde o led esta conectado
+#include <stdlib.h>
+
+#define PINO_LED 10	// Pino de saida PWM onde o led esta conectado
 char comandoSerial[4];
 
 void setup() {
@@ -16,7 +18,7 @@ void loop() {
 	// Verifica se ha pelo menos 3 bytes disponiveis na serial
 	if(Serial.available() >= 3) {
 		// Move os 3 bytes do buffer da serial para o array comandoSerial
-		String comando = Serial.readBytes(comandoSerial, 3);
+		Serial.readBytes(comandoSerial, 3);
 		// Adiciona null ao final do array, para conversao em string
 		comandoSerial[3] = '\0';
 		// Converte a string recebida para inteiro

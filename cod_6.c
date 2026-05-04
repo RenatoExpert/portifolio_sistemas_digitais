@@ -31,7 +31,7 @@ void setup () {
 		Serial.println("Configurando a hora!");
 		// __DATE__ e __TIME__ sao macros que sao substituidos
 		// pela data e hora do sistema durante a compilacao
-		rtc.adjust(Datetime(F(__DATE__), F(__TIME__)));
+		rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 	}
 	// Iniciando o medidor DHT
 	dht.begin();
@@ -40,14 +40,14 @@ void setup () {
 
 void loop () {
 	// Leitura do timestamp atual utilizando o modulo RTC
-	dt_now = rtc.now();
+	DateTime dt_now = rtc.now();
 
 	// Convertendo para minutos
 	long current_minute = dt_now.unixtime() / MINUTE;
 	// Verificando se ja se passou um minuto desde a ultima medicao
 	if (current_minute > last_cycle_minute) {
 		// Formatando a data e hora atuais
-		dt_string = dt.ToString("dd/MM/yyyy HH:mm:ss");
+		char dt_string[20] = dt_now.ToString("dd/MM/yyyy HH:mm:ss");
 
 		// Lendo a temperatura e formatando em String
 		float temperature = dht.readTemperature();
@@ -61,7 +61,7 @@ void loop () {
 
 		// Unindo todos os textos em um so e enviando para o serial
 		char text[100];
-		sprint(text, "Data e Hora: %s | Temperatura: %s\xB0C | Umidade: %s%%\n", dt_string, temperature, humidity);
+		sprintf(text, "Data e Hora: %s | Temperatura: %s\xB0C | Umidade: %s%%\n", dt_string, temp_str, hum_str);
 		Serial.print(text);
 
 		// Armazenando a informacao de quando ocorreu a ultima medicao

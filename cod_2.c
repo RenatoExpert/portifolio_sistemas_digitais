@@ -4,8 +4,8 @@
  * Este programa simula um registrador de deslocamento utilizando 5 LEDs
  */
 
-#define QUANTIDADE_LEDS 5;	// Quantos leds existem
-#define TEMPO_ACESO 200;
+#define QUANTIDADE_LEDS 5	// Quantos leds existem
+#define TEMPO_ACESO 200
 
 const int pinLEDs[] = { 8, 9, 10, 11, 12 };
 
@@ -24,7 +24,7 @@ void loop() {
 	for(int i = 0; i < QUANTIDADE_LEDS; i++) {
 		digitalWrite(pinLEDs[i], HIGH);
 		delay(TEMPO_ACESO);
-		digitalWrite(pinLEDs[i]. LOW);
+		digitalWrite(pinLEDs[i], LOW);
 	}
 }
 

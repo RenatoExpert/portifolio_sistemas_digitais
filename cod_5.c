@@ -5,22 +5,22 @@
  */
 
 // Utilizando macros para enderecar os pinos
-#define LED_VERMELHO 13;
-#define LED_AMARELO 12;
-#define LED_LARANJA 11;
-#define LED_AZUL 10;
-#define LED_VERDE 9;
-#define PIN_VCC A0;
-#define PIN_SENSOR A1;
+#define LED_VERMELHO 13
+#define LED_AMARELO 12
+#define LED_LARANJA 11
+#define LED_AZUL 10
+#define LED_VERDE 9
+#define PIN_VCC A0
+#define PIN_SENSOR A1
 
 // Macros para limites de faixa de valores
-#define LIMITE_VERMELHO 200;
-#define LIMITE_AMARELO 400;
-#define LIMITE_LARANJA 600;
-#define LIMITE_AZUL 800;
+#define LIMITE_VERMELHO 200
+#define LIMITE_AMARELO 400
+#define LIMITE_LARANJA 600
+#define LIMITE_AZUL 800
 
 // Definindo intervalo do loop em 1 segundo
-#define INTERVALOR 1000;
+#define INTERVALOR 1000
 
 // Inicializando variavel umidade
 // Poderia tambem ser inicializado dentro de loop()
@@ -45,7 +45,7 @@ void setup() {
 
 void loop() {
 	// Leitura do valor de umidade
-	umidade = analogRead(pin_sensor);
+	umidade = analogRead(PIN_SENSOR);
 	// Enviar valor para o serial, para mostragem em terminal
 	Serial.println(umidade);
 

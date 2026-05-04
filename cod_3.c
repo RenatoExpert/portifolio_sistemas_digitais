@@ -4,8 +4,8 @@
  * Este programa permite controlar a intensidade luminosa de um LED com base na posicao de um potenciometro
  */
 
-#define PINO_POTENCIOMETRO A0;	// Pino / entrada analogica onde o potenciometro esta conectado
-#define PINO_LED 10;		// Pino / saida analogica onde o LED esta conectado
+#define PINO_POTENCIOMETRO A0	// Pino / entrada analogica onde o potenciometro esta conectado
+#define PINO_LED 10		// Pino / saida analogica onde o LED esta conectado
 
 // Inicializacao
 void setup() {
