@@ -20,7 +20,7 @@
 #define LIMITE_AZUL 800
 
 // Definindo intervalo do loop em 1 segundo
-#define INTERVALOR 1000
+#define INTERVALO 1000
 
 // Inicializando variavel umidade
 // Poderia tambem ser inicializado dentro de loop()
