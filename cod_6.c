@@ -47,7 +47,7 @@ void loop () {
 	// Verificando se ja se passou um minuto desde a ultima medicao
 	if (current_minute > last_cycle_minute) {
 		// Formatando a data e hora atuais
-		char dt_string[20] = dt_now.ToString("dd/MM/yyyy HH:mm:ss");
+		char dt_string[20] = dt_now.toString("dd/MM/yyyy HH:mm:ss");
 
 		// Lendo a temperatura e formatando em String
 		float temperature = dht.readTemperature();
