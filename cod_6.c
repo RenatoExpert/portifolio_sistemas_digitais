@@ -1,3 +1,9 @@
+/*
+ * Codigo 6
+ * Leitura de umidade e temperatura
+ * Envia dados do sensor DHT a cada 1 minuto, utilizando modulo RTC
+ */
+
 #include <Wire.h>
 #include <RTClib.h>
 #include <DHT.h>
